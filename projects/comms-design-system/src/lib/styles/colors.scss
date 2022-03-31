@@ -1,0 +1,19 @@
+$primary: #6b58cb;
+$primary-text: #ffffff;
+$secondary: #ffffff;
+$secondary-text: #87868d;
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+:host {
+  --primary: #{$primary};
+  --primary-rgb: #{hexToRGB($primary)};
+  --primary-text: #{$primary-text};
+  --primary-text-rgb: #{hexToRGB($primary-text)};
+  --primary: #{$primary};
+  --primary-rgb: #{hexToRGB($secondary)};
+  --secondary-text: #{$secondary-text};
+  --secondary-text-rgb: #{hexToRGB($secondary-text)};
+}

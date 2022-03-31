@@ -11,8 +11,8 @@ export enum CommsButtonSizeEnum {
   styleUrls: ['./comms-button.component.scss'],
 })
 export class CommsButtonComponent {
-  @Input() label: string = 'Button';
-  @Input() backgroundColor?: string;
+  @Input() label?: string = 'Button';
+  @Input() icon?: string = 'pie_chart';
   @Input() primary?: boolean;
   @Input() size?: CommsButtonSizeEnum;
 

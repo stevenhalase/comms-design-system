@@ -1,1 +1,8 @@
-<button>{{ label }}</button>
+<button [class]="[size]" [class.primary]="primary">
+  <ng-template *ngIf="icon">
+    <span class="icon material-icons">{{ icon }}</span>
+  </ng-template>
+  <ng-template #label>
+    <span class="label">{{ label }}</span>
+  </ng-template>
+</button>
