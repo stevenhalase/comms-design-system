@@ -1,0 +1,16 @@
+{
+  "extends": "../projects/comms-design-system/tsconfig.lib.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts"
+  ],
+  "include": ["../src/**/*", "../stories/**/*", "../projects/**/*"],
+  "files": ["./typings.d.ts"]
+}
