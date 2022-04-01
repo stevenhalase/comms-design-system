@@ -1,19 +1,44 @@
-$primary: #6b58cb;
-$primary-text: #ffffff;
-$secondary: #ffffff;
-$secondary-text: #87868d;
+$ameixa: #6b58cb;
+$spandex-green: #39b24d;
+$mandarin-rind: #f2933f;
+$bay-fog: #9697ad;
+$lead: #202022;
+
+$white: #ffffff;
+$black: #000000;
 
 @function hexToRGB($hex) {
   @return red($hex), green($hex), blue($hex);
 }
 
 :host {
-  --primary: #{$primary};
-  --primary-rgb: #{hexToRGB($primary)};
-  --primary-text: #{$primary-text};
-  --primary-text-rgb: #{hexToRGB($primary-text)};
-  --primary: #{$primary};
-  --primary-rgb: #{hexToRGB($secondary)};
-  --secondary-text: #{$secondary-text};
-  --secondary-text-rgb: #{hexToRGB($secondary-text)};
+  --ameixa: #{$ameixa};
+  --ameixa-rgb: #{hexToRGB($ameixa)};
+  --spandex-green: #{$spandex-green};
+  --spandex-green-rgb: #{hexToRGB($spandex-green)};
+  --mandarin-rind: #{$mandarin-rind};
+  --mandarin-rind-rgb: #{hexToRGB($mandarin-rind)};
+  --bay-fog: #{$bay-fog};
+  --bay-fog-rgb: #{hexToRGB($bay-fog)};
+  --lead: #{$lead};
+  --lead-rgb: #{hexToRGB($lead)};
+  --white: #{$white};
+  --white-rgb: #{hexToRGB($white)};
+  --black: #{$black};
+  --black-rgb: #{hexToRGB($black)};
+
+  --primary: #{$ameixa};
+  --primary-rgb: #{hexToRGB($ameixa)};
+  --primary-text: #{$white};
+  --primary-text-rgb: #{hexToRGB($white)};
+  --primary-border: transparent;
+  --secondary: #{$white};
+  --secondary-rgb: #{hexToRGB($white)};
+  --secondary-text: #{$bay-fog};
+  --secondary-text-rgb: #{hexToRGB($bay-fog)};
+  --secondary-border: #{$bay-fog};
+  --secondary-border-rgb: #{hexToRGB($bay-fog)};
+
+  --bold-text: #{$lead};
+  --bold-text-rgb: #{hexToRGB($lead)};
 }

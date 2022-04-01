@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "CommsButtonComponent",
-            "id": "component-CommsButtonComponent-6bd1de0101a833e1ab567ae02eac7b2d9fd3a2d26f40941ef6ebfd616a777012922a3f7447e08ac1a2e667c4d4c1512b2ebd554e146000ff396085fb57ed0b98",
+            "id": "component-CommsButtonComponent-eab5f005385a71572f62cb578732054b60e05fd7a17abdb6143595f4e85a90142cb58c8edfb13b24e75a1afbfeaefdba1e52100fa8e9a1e66832af0383d546d7",
             "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -28,7 +28,14 @@
             "inputsClass": [
                 {
                     "name": "icon",
-                    "defaultValue": "'pie_chart'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 15,
@@ -36,19 +43,10 @@
                     "decorators": []
                 },
                 {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
                     "name": "primary",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -56,14 +54,97 @@
                     "name": "size",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "CommsButtonSizeEnum",
                     "decorators": []
                 }
             ],
             "outputsClass": [
                 {
-                    "name": "onClick",
+                    "name": "click",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\nexport enum CommsButtonSizeEnum {\r\n  SMALL = 'small',\r\n  LARGE = 'large',\r\n  BLOCK = 'block',\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-button',\r\n  templateUrl: './comms-button.component.html',\r\n  styleUrls: ['./comms-button.component.scss'],\r\n})\r\nexport class CommsButtonComponent {\r\n  @Input() label?: string;\r\n  @Input() icon?: string;\r\n  @Input() primary?: boolean;\r\n  @Input() size?: CommsButtonSizeEnum;\r\n\r\n  @Output() click = new EventEmitter<Event>();\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../styles/global.scss';\r\n\r\n:host {\r\n  --button-background-color: var(--secondary);\r\n  --button-text-color: var(--secondary-text);\r\n  --button-border-radius: var(--spacing-xs);\r\n  --button-border-color: rgba(var(--secondary-border-rgb), 1);\r\n}\r\n\r\nbutton {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  background: var(--button-background-color);\r\n  border: 1px solid var(--button-border-color);\r\n  border-radius: var(--button-border-radius);\r\n  color: var(--button-text-color);\r\n  padding: 0;\r\n\r\n  .label {\r\n    flex: 1;\r\n  }\r\n\r\n  .label,\r\n  .icon {\r\n    @include padding(\r\n      var(--spacing-sm),\r\n      var(--spacing-md),\r\n      var(--spacing-sm),\r\n      var(--spacing-md)\r\n    );\r\n  }\r\n\r\n  &:hover {\r\n    --button-border-color: rgba(var(--secondary-text-rgb), 1);\r\n    cursor: pointer;\r\n  }\r\n\r\n  &.primary {\r\n    --button-background-color: var(--primary);\r\n    --button-text-color: var(--primary-text);\r\n    --button-border-color: transparent;\r\n\r\n    &:hover {\r\n      --button-background-color: rgba(var(--primary-rgb), 0.8);\r\n      cursor: pointer;\r\n    }\r\n  }\r\n\r\n  &.small {\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-xs),\r\n        var(--spacing-xs),\r\n        var(--spacing-xs),\r\n        var(--spacing-xs)\r\n      );\r\n    }\r\n  }\r\n\r\n  &.large {\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-md),\r\n        var(--spacing-lg),\r\n        var(--spacing-md),\r\n        var(--spacing-lg)\r\n      );\r\n    }\r\n  }\r\n\r\n  &.block {\r\n    width: 100%;\r\n\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-md),\r\n        var(--spacing-lg),\r\n        var(--spacing-md),\r\n        var(--spacing-lg)\r\n      );\r\n    }\r\n  }\r\n\r\n  .icon + .label {\r\n    border-left: 1px solid var(--button-border-color);\r\n  }\r\n}\r\n",
+                    "styleUrl": "./comms-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button [class]=\"[size]\" [class.primary]=\"primary\">\r\n  <span *ngIf=\"icon\" class=\"icon material-icons\">{{ icon }}</span>\r\n  <span *ngIf=\"label\" class=\"label\">{{ label }}</span>\r\n</button>\r\n"
+        },
+        {
+            "name": "CommsInputComponent",
+            "id": "component-CommsInputComponent-fb6c7437fe5e74c83c6b1b88a8e2f7112b9828572a7a493aaa4af35c7380d3cb996fa33815d0e2033b83c23955e09419a4ed2177884093c718619c62467b3278",
+            "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "comms-input",
+            "styleUrls": [
+                "./comms-input.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./comms-input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "CommsInputTypeEnum.TEXT",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "CommsInputTypeEnum",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "change",
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -80,27 +161,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\nexport enum CommsButtonSizeEnum {\r\n  SMALL = 'small',\r\n  LARGE = 'large',\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-button',\r\n  templateUrl: './comms-button.component.html',\r\n  styleUrls: ['./comms-button.component.scss'],\r\n})\r\nexport class CommsButtonComponent {\r\n  @Input() label?: string = 'Button';\r\n  @Input() icon?: string = 'pie_chart';\r\n  @Input() primary?: boolean;\r\n  @Input() size?: CommsButtonSizeEnum;\r\n\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary\r\n      ? 'storybook-button--primary'\r\n      : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\nexport enum CommsInputTypeEnum {\r\n  TEXT = 'text',\r\n  NUMBER = 'number',\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-input',\r\n  templateUrl: './comms-input.component.html',\r\n  styleUrls: ['./comms-input.component.scss'],\r\n})\r\nexport class CommsInputComponent {\r\n  @Input() type = CommsInputTypeEnum.TEXT;\r\n  @Input() placeholder?: string;\r\n  @Input() label?: string;\r\n  @Input() value?: string;\r\n\r\n  @Output() change = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../styles/global.scss';\r\n\r\n:host {\r\n  --button-background-color: var(--secondary);\r\n  --button-text-color: var(--secondary-text);\r\n  --button-border-radius: var(--spacing-xs);\r\n  --button-border-color: rgba(var(--secondary-text-rgb), 0.8);\r\n}\r\n\r\nbutton {\r\n  @include padding(\r\n    var(--spacing-sm),\r\n    var(--spacing-md),\r\n    var(--spacing-sm),\r\n    var(--spacing-md)\r\n  );\r\n\r\n  background: var(--button-background-color);\r\n  border: 1px solid var(--button-border-color);\r\n  border-radius: var(--button-border-radius);\r\n  color: var(--button-text-color);\r\n\r\n  &:hover {\r\n    --button-border-color: rgba(var(--secondary-text-rgb), 1);\r\n    cursor: pointer;\r\n  }\r\n\r\n  &.primary {\r\n    --button-background-color: var(--primary);\r\n    --button-text-color: var(--primary-text);\r\n    --button-border-color: transparent;\r\n\r\n    &:hover {\r\n      --button-background-color: rgba(var(--primary-rgb), 0.8);\r\n      cursor: pointer;\r\n    }\r\n  }\r\n\r\n  &.small {\r\n    @include padding(\r\n      var(--spacing-xs),\r\n      var(--spacing-xs),\r\n      var(--spacing-xs),\r\n      var(--spacing-xs)\r\n    );\r\n  }\r\n}\r\n",
-                    "styleUrl": "./comms-button.component.scss"
+                    "data": "@import '../../styles/global.scss';\r\n\r\n:host {\r\n  --input-background-color: var(--secondary);\r\n  --input-text-color: var(--secondary-text);\r\n  --input-border-color: rgba(var(--secondary-text-rgb), 0.8);\r\n\r\n  position: relative;\r\n}\r\n\r\nlabel {\r\n}\r\n\r\ninput {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  background: var(--input-background-color);\r\n  outline: none;\r\n  border: none;\r\n  border-bottom: 1px solid var(--input-border-color);\r\n  color: var(--input-text-color);\r\n  padding: 0;\r\n\r\n  &:focus {\r\n    border-bottom: 1px solid rgba(var(--secondary-text-rgb), 1);\r\n  }\r\n}\r\n",
+                    "styleUrl": "./comms-input.component.scss"
                 }
             ],
             "stylesData": "",
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 21
-                    }
-                }
-            },
-            "templateData": "<button [class]=\"[size]\" [class.primary]=\"primary\">\r\n  <ng-template *ngIf=\"icon\">\r\n    <span class=\"icon material-icons\">{{ icon }}</span>\r\n  </ng-template>\r\n  <ng-template #label>\r\n    <span class=\"label\">{{ label }}</span>\r\n  </ng-template>\r\n</button>\r\n"
+            "templateData": "<label *ngIf=\"label\">{{ label }}</label>\r\n<input\r\n  [type]=\"type\"\r\n  [placeholder]=\"placeholder ? placeholder : ''\"\r\n  [value]=\"value ? value : ''\"\r\n  (change)=\"change.emit($event)\"\r\n/>\r\n"
         }
     ],
     "modules": [
@@ -123,6 +193,9 @@
                     "elements": [
                         {
                             "name": "CommsButtonComponent"
+                        },
+                        {
+                            "name": "CommsInputComponent"
                         }
                     ]
                 },
@@ -135,6 +208,9 @@
                     "elements": [
                         {
                             "name": "CommsButtonComponent"
+                        },
+                        {
+                            "name": "CommsInputComponent"
                         }
                     ]
                 },
@@ -152,6 +228,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Block",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "components",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -159,13 +245,53 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[CommsButtonComponent]"
+                "defaultValue": "[CommsButtonComponent, CommsInputComponent]"
+            },
+            {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Label",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LabelIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Placeholder",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -210,6 +336,36 @@
                 "deprecationMessage": "",
                 "type": "Story<CommsButtonComponent>",
                 "defaultValue": "(args: CommsButtonComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CommsInputComponent>",
+                "defaultValue": "(args: CommsInputComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Value",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -229,6 +385,12 @@
                         "deprecated": false,
                         "deprecationMessage": "",
                         "value": "large"
+                    },
+                    {
+                        "name": "BLOCK",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "block"
                     }
                 ],
                 "ctype": "miscellaneous",
@@ -237,22 +399,63 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.component.ts"
+            },
+            {
+                "name": "CommsInputTypeEnum",
+                "childs": [
+                    {
+                        "name": "TEXT",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "text"
+                    },
+                    {
+                        "name": "NUMBER",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "number"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.component.ts"
             }
         ],
         "groupedVariables": {
-            "projects/comms-design-system/src/lib/components/index.ts": [
+            "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts": [
                 {
-                    "name": "components",
+                    "name": "Block",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/comms-design-system/src/lib/components/index.ts",
+                    "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[CommsButtonComponent]"
-                }
-            ],
-            "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts": [
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LabelIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
@@ -303,6 +506,70 @@
                     "type": "Story<CommsButtonComponent>",
                     "defaultValue": "(args: CommsButtonComponent) => ({\r\n  props: args,\r\n})"
                 }
+            ],
+            "projects/comms-design-system/src/lib/components/index.ts": [
+                {
+                    "name": "components",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/index.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[CommsButtonComponent, CommsInputComponent]"
+                }
+            ],
+            "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts": [
+                {
+                    "name": "Label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Placeholder",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CommsInputComponent>",
+                    "defaultValue": "(args: CommsInputComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Value",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -322,6 +589,12 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "value": "large"
+                        },
+                        {
+                            "name": "BLOCK",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "block"
                         }
                     ],
                     "ctype": "miscellaneous",
@@ -330,6 +603,31 @@
                     "deprecationMessage": "",
                     "description": "",
                     "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.component.ts"
+                }
+            ],
+            "projects/comms-design-system/src/lib/components/comms-input/comms-input.component.ts": [
+                {
+                    "name": "CommsInputTypeEnum",
+                    "childs": [
+                        {
+                            "name": "TEXT",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "text"
+                        },
+                        {
+                            "name": "NUMBER",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "number"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.component.ts"
                 }
             ]
         },
@@ -347,6 +645,36 @@
                 "name": "CommsButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Block",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LabelIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -395,6 +723,65 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-input/comms-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommsInputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Label",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Placeholder",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Value",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

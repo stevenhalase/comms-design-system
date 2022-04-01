@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export enum CommsButtonSizeEnum {
   SMALL = 'small',
   LARGE = 'large',
+  BLOCK = 'block',
 }
 
 @Component({
@@ -11,18 +12,10 @@ export enum CommsButtonSizeEnum {
   styleUrls: ['./comms-button.component.scss'],
 })
 export class CommsButtonComponent {
-  @Input() label?: string = 'Button';
-  @Input() icon?: string = 'pie_chart';
+  @Input() label?: string;
+  @Input() icon?: string;
   @Input() primary?: boolean;
   @Input() size?: CommsButtonSizeEnum;
 
-  @Output() onClick = new EventEmitter<Event>();
-
-  public get classes(): string[] {
-    const mode = this.primary
-      ? 'storybook-button--primary'
-      : 'storybook-button--secondary';
-
-    return ['storybook-button', `storybook-button--${this.size}`, mode];
-  }
+  @Output() click = new EventEmitter<Event>();
 }
