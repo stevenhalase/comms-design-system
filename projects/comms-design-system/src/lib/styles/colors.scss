@@ -5,6 +5,7 @@ $carmine-pink: #e74c3c;
 
 $paper-white: #f0f0f2;
 $bay-fog: #9697ad;
+$verified-black: #212526;
 $lead: #202022;
 
 $white: #ffffff;
@@ -26,6 +27,8 @@ $black: #000000;
   --paper-white-rgb: #{hexToRGB($paper-white)};
   --bay-fog: #{$bay-fog};
   --bay-fog-rgb: #{hexToRGB($bay-fog)};
+  --verified-black: #{$verified-black};
+  --verified-black-rgb: #{hexToRGB($verified-black)};
   --lead: #{$lead};
   --lead-rgb: #{hexToRGB($lead)};
   --white: #{$white};
@@ -52,6 +55,12 @@ $black: #000000;
   --secondary-background-rgb: #{hexToRGB($paper-white)};
   --secondary-border-alternate: #{$paper-white};
   --secondary-border-alternate-rgb: #{hexToRGB($paper-white)};
+  --navigation-background: #{$white};
+  --navigation-background-rgb: #{hexToRGB($white)};
+  --navigation-text: #{$bay-fog};
+  --navigation-text-rgb: #{hexToRGB($bay-fog)};
+  --navigation-text-active: #{$black};
+  --navigation-text-active-rgb: #{hexToRGB($black)};
 
   --success: #{$spandex-green};
   --success-rgb: #{hexToRGB($spandex-green)};
@@ -77,5 +86,9 @@ $black: #000000;
     --secondary-background-rgb: #{hexToRGB($lead)};
     --secondary-border-alternate: #{$bay-fog};
     --secondary-border-alternate-rgb: #{hexToRGB($bay-fog)};
+    --navigation-background: #{$verified-black};
+    --navigation-background-rgb: #{hexToRGB($verified-black)};
+    --navigation-text-active: #{$white};
+    --navigation-text-active-rgb: #{hexToRGB($white)};
   }
 }

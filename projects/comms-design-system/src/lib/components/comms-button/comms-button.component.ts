@@ -21,13 +21,14 @@ export enum CommsButtonSizeEnum {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommsButtonComponent {
-  DEFAULT_SIZE = CommsButtonSizeEnum.MEDIUM;
-
   @Input() label?: string;
   @Input() icon?: string;
   @Input() primary?: boolean;
-  @Input() size?: CommsButtonSizeEnum;
+  @Input() menu?: boolean;
+  @Input() active?: boolean;
+  @Input() size? = CommsButtonSizeEnum.MEDIUM;
   @Input() text?: boolean;
+  @Input() border?: boolean = true;
 
   @Output() click = new EventEmitter<Event>();
 }

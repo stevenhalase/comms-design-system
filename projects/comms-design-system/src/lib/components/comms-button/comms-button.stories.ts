@@ -67,3 +67,10 @@ Text.args = {
   label: 'Recover password',
   text: true,
 };
+
+export const NoBorder = Template.bind({});
+// More on args: https://storybook.js.org/docs/angular/writing-stories/args
+NoBorder.args = {
+  icon: 'home',
+  border: false,
+};

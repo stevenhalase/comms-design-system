@@ -29,6 +29,25 @@ Default.args = {
       label: 'Home',
       icon: 'home',
       link: './',
+      active: true,
+    },
+    {
+      label: 'Messages',
+      icon: 'forum',
+      link: './',
+      active: false,
+    },
+    {
+      label: 'Call',
+      icon: 'phone',
+      link: './',
+      active: false,
+    },
+    {
+      label: 'Devices',
+      icon: 'devices',
+      link: './',
+      active: false,
     },
   ],
 };

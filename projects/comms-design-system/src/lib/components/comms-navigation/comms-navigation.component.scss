@@ -1,7 +1,48 @@
 @import '../../styles/index.scss';
 
 :host {
-  --badge-text-color: var(--secondary-text);
-  --badge-background-color: var(--secondary-background);
-  --badge-border-color: var(--secondary-border-alternate);
+  --navigation-background-color: var(--navigation-background);
+}
+
+.bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--secondary);
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--navigation-background-color);
+  padding: var(--spacing-md);
+
+  transform: translateX(-100%);
+  transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  background-color: rgba(var(--secondary), 0.8);
 }

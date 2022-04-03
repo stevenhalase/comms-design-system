@@ -9,7 +9,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: fit-content;
 }
 
 button {
@@ -54,6 +54,24 @@ button {
       --button-background-color: rgba(var(--primary-rgb), 0.8);
       cursor: pointer;
     }
+  }
+
+  &.menu {
+    --button-background-color: rgba(var(--navigation-background), 1);
+    --button-border-color: var(--primary-border);
+
+    &:hover {
+      --button-background-color: rgba(var(--navigation-background), 0.8);
+      --button-text-color: rgba(var(--secondary-text-rgb), 1);
+      cursor: pointer;
+    }
+  }
+
+  &.active {
+    --button-text-color: var(--navigation-text-active);
+    --button-background-color: rgba(var(--navigation-background), 1);
+    --button-border-color: var(--primary-border);
+    pointer-events: none;
   }
 
   &.small {
@@ -102,5 +120,13 @@ button {
 
   .icon + .label {
     border-left: 1px solid var(--button-border-color);
+  }
+
+  &.no-border {
+    border: none;
+
+    .icon + .label {
+      border-left: none;
+    }
   }
 }
