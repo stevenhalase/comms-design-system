@@ -60,3 +60,10 @@ LabelIcon.args = {
   label: 'Home',
   icon: 'home',
 };
+
+export const Text = Template.bind({});
+// More on args: https://storybook.js.org/docs/angular/writing-stories/args
+Text.args = {
+  label: 'Recover password',
+  text: true,
+};

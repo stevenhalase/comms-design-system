@@ -1,4 +1,8 @@
-<button [class]="[size]" [class.primary]="primary">
+<button
+  [class]="size ? size : DEFAULT_SIZE"
+  [class.primary]="primary"
+  [class.text]="!!text"
+>
   <span *ngIf="icon" class="icon material-icons">{{ icon }}</span>
   <span *ngIf="label" class="label">{{ label }}</span>
 </button>

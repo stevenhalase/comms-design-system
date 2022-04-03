@@ -1,0 +1,12 @@
+<span class="radio" [class.selected]="localValue">
+  <!-- <span class="selected-indicator"></span> -->
+</span>
+<label *ngIf="label">{{ label }}</label>
+<input
+  [value]="localValue"
+  type="radio"
+  id="css"
+  name="fav_language"
+  value="CSS"
+  (change)="change.emit($event)"
+/>

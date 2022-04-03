@@ -1,0 +1,7 @@
+@import '../../styles/index.scss';
+
+:host {
+  --badge-text-color: var(--secondary-text);
+  --badge-background-color: var(--secondary-background);
+  --badge-border-color: var(--secondary-border-alternate);
+}

@@ -1,6 +1,48 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "CommsNavigationMenuItem",
+            "id": "interface-CommsNavigationMenuItem-9ef3f973695f55d8a4bd1be7619bd6e778581ac1c4031dd9e7bbd8c48dab9fb8da7738732974ba5305ef849089b5cd2d0fe50adffb448ba986487efbebaf7204",
+            "file": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\nexport interface CommsNavigationMenuItem {\r\n  label: string;\r\n  icon: string;\r\n  link: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-navigation',\r\n  templateUrl: './comms-navigation.component.html',\r\n  styleUrls: ['./comms-navigation.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class CommsNavigationComponent {\r\n  @Input() menuItems: CommsNavigationMenuItem[] = [];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
@@ -8,9 +50,70 @@
     "directives": [],
     "components": [
         {
+            "name": "CommsBadgeComponent",
+            "id": "component-CommsBadgeComponent-16d2033a87a279a2669c2e0edda9c6f5b843ab75a65d2c1853bc95527b28ad34bc851c92064dc90639ebcbf3502f6df8d2c67fe6e0534af5485c52bb8cf01f12",
+            "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "comms-badge",
+            "styleUrls": [
+                "./comms-badge.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./comms-badge.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "CommsBadgeTypeEnum.DEFAULT",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "CommsBadgeTypeEnum",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\nexport enum CommsBadgeTypeEnum {\r\n  DEFAULT = 'default',\r\n  PRIMARY = 'primary',\r\n  SUCCESS = 'success',\r\n  WARNING = 'warning',\r\n  ERROR = 'error',\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-badge',\r\n  templateUrl: './comms-badge.component.html',\r\n  styleUrls: ['./comms-badge.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class CommsBadgeComponent {\r\n  @Input() label: string = '';\r\n  @Input() type? = CommsBadgeTypeEnum.DEFAULT;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../styles/index.scss';\r\n\r\n:host {\r\n  --badge-text-color: var(--secondary-text);\r\n  --badge-background-color: var(--secondary-background);\r\n  --badge-border-color: var(--secondary-border-alternate);\r\n}\r\n\r\n.badge {\r\n  @include padding(2px, 12px, 2px, 12px);\r\n\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  color: var(--badge-text-color);\r\n  background-color: var(--badge-background-color);\r\n  width: fit-content;\r\n  border-radius: 30px;\r\n  font-size: 14px;\r\n  border: 1px solid var(--badge-border-color);\r\n\r\n  &.primary {\r\n    --badge-text-color: var(--white);\r\n    --badge-background-color: var(--primary);\r\n    border: none;\r\n  }\r\n\r\n  &.success {\r\n    --badge-text-color: var(--white);\r\n    --badge-background-color: var(--success);\r\n    border: none;\r\n  }\r\n\r\n  &.warning {\r\n    --badge-text-color: var(--white);\r\n    --badge-background-color: var(--warning);\r\n    border: none;\r\n  }\r\n\r\n  &.error {\r\n    --badge-text-color: var(--white);\r\n    --badge-background-color: var(--error);\r\n    border: none;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./comms-badge.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<span class=\"badge\" [class]=\"[type ? type : '']\">{{ label }}</span>\r\n"
+        },
+        {
             "name": "CommsButtonComponent",
-            "id": "component-CommsButtonComponent-eab5f005385a71572f62cb578732054b60e05fd7a17abdb6143595f4e85a90142cb58c8edfb13b24e75a1afbfeaefdba1e52100fa8e9a1e66832af0383d546d7",
+            "id": "component-CommsButtonComponent-f7a05cc75957f39505370223f41cd5e406a6c8a9a155f74815fbcad10934b00419aadefeb1687ff2f7e0e7bed6656347337c27e2ad75343c53aba2e992e71b9c",
             "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -30,7 +133,7 @@
                     "name": "icon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 27,
                     "type": "string",
                     "decorators": []
                 },
@@ -38,7 +141,7 @@
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 26,
                     "type": "string",
                     "decorators": []
                 },
@@ -46,7 +149,7 @@
                     "name": "primary",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 28,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -54,8 +157,16 @@
                     "name": "size",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 29,
                     "type": "CommsButtonSizeEnum",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "boolean",
                     "decorators": []
                 }
             ],
@@ -65,11 +176,22 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 32,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "DEFAULT_SIZE",
+                    "defaultValue": "CommsButtonSizeEnum.MEDIUM",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -78,21 +200,22 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\nexport enum CommsButtonSizeEnum {\r\n  SMALL = 'small',\r\n  LARGE = 'large',\r\n  BLOCK = 'block',\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-button',\r\n  templateUrl: './comms-button.component.html',\r\n  styleUrls: ['./comms-button.component.scss'],\r\n})\r\nexport class CommsButtonComponent {\r\n  @Input() label?: string;\r\n  @Input() icon?: string;\r\n  @Input() primary?: boolean;\r\n  @Input() size?: CommsButtonSizeEnum;\r\n\r\n  @Output() click = new EventEmitter<Event>();\r\n}\r\n",
+            "sourceCode": "import {\r\n  AfterViewInit,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  EventEmitter,\r\n  Input,\r\n  Output,\r\n} from '@angular/core';\r\n\r\nexport enum CommsButtonSizeEnum {\r\n  SMALL = 'small',\r\n  MEDIUM = 'medium',\r\n  LARGE = 'large',\r\n  BLOCK = 'block',\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-button',\r\n  templateUrl: './comms-button.component.html',\r\n  styleUrls: ['./comms-button.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class CommsButtonComponent {\r\n  DEFAULT_SIZE = CommsButtonSizeEnum.MEDIUM;\r\n\r\n  @Input() label?: string;\r\n  @Input() icon?: string;\r\n  @Input() primary?: boolean;\r\n  @Input() size?: CommsButtonSizeEnum;\r\n  @Input() text?: boolean;\r\n\r\n  @Output() click = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../styles/global.scss';\r\n\r\n:host {\r\n  --button-background-color: var(--secondary);\r\n  --button-text-color: var(--secondary-text);\r\n  --button-border-radius: var(--spacing-xs);\r\n  --button-border-color: rgba(var(--secondary-border-rgb), 1);\r\n}\r\n\r\nbutton {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  background: var(--button-background-color);\r\n  border: 1px solid var(--button-border-color);\r\n  border-radius: var(--button-border-radius);\r\n  color: var(--button-text-color);\r\n  padding: 0;\r\n\r\n  .label {\r\n    flex: 1;\r\n  }\r\n\r\n  .label,\r\n  .icon {\r\n    @include padding(\r\n      var(--spacing-sm),\r\n      var(--spacing-md),\r\n      var(--spacing-sm),\r\n      var(--spacing-md)\r\n    );\r\n  }\r\n\r\n  &:hover {\r\n    --button-border-color: rgba(var(--secondary-text-rgb), 1);\r\n    cursor: pointer;\r\n  }\r\n\r\n  &.primary {\r\n    --button-background-color: var(--primary);\r\n    --button-text-color: var(--primary-text);\r\n    --button-border-color: transparent;\r\n\r\n    &:hover {\r\n      --button-background-color: rgba(var(--primary-rgb), 0.8);\r\n      cursor: pointer;\r\n    }\r\n  }\r\n\r\n  &.small {\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-xs),\r\n        var(--spacing-xs),\r\n        var(--spacing-xs),\r\n        var(--spacing-xs)\r\n      );\r\n    }\r\n  }\r\n\r\n  &.large {\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-md),\r\n        var(--spacing-lg),\r\n        var(--spacing-md),\r\n        var(--spacing-lg)\r\n      );\r\n    }\r\n  }\r\n\r\n  &.block {\r\n    width: 100%;\r\n\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-md),\r\n        var(--spacing-lg),\r\n        var(--spacing-md),\r\n        var(--spacing-lg)\r\n      );\r\n    }\r\n  }\r\n\r\n  .icon + .label {\r\n    border-left: 1px solid var(--button-border-color);\r\n  }\r\n}\r\n",
+                    "data": "@import '../../styles/index.scss';\r\n\r\n:host {\r\n  --button-background-color: var(--secondary);\r\n  --button-text-color: rgba(var(--secondary-text-rgb), 0.8);\r\n  --button-border-radius: var(--spacing-xs);\r\n  --button-border-color: rgba(var(--secondary-border-rgb), 0.5);\r\n\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n}\r\n\r\nbutton {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  background: var(--button-background-color);\r\n  border: 1px solid var(--button-border-color);\r\n  border-radius: var(--button-border-radius);\r\n  color: var(--button-text-color);\r\n  padding: 0;\r\n  width: fit-content;\r\n\r\n  .label {\r\n    flex: 1;\r\n    font-weight: 700;\r\n  }\r\n\r\n  .label,\r\n  .icon {\r\n    @include padding(\r\n      var(--spacing-sm),\r\n      var(--spacing-md),\r\n      var(--spacing-sm),\r\n      var(--spacing-md)\r\n    );\r\n  }\r\n\r\n  &:hover {\r\n    --button-text-color: rgba(var(--secondary-text-rgb), 1);\r\n    --button-border-color: rgba(var(--secondary-border-rgb), 1);\r\n    cursor: pointer;\r\n  }\r\n\r\n  &.primary {\r\n    --button-background-color: rgba(var(--primary-rgb), 1);\r\n    --button-text-color: var(--primary-text);\r\n    --button-border-color: var(--primary-border);\r\n\r\n    &:hover {\r\n      --button-background-color: rgba(var(--primary-rgb), 0.8);\r\n      cursor: pointer;\r\n    }\r\n  }\r\n\r\n  &.small {\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-xs),\r\n        var(--spacing-xs),\r\n        var(--spacing-xs),\r\n        var(--spacing-xs)\r\n      );\r\n    }\r\n  }\r\n\r\n  &.large {\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-md),\r\n        var(--spacing-lg),\r\n        var(--spacing-md),\r\n        var(--spacing-lg)\r\n      );\r\n    }\r\n  }\r\n\r\n  &.block {\r\n    width: 100%;\r\n\r\n    .label,\r\n    .icon {\r\n      @include padding(\r\n        var(--spacing-md),\r\n        var(--spacing-lg),\r\n        var(--spacing-md),\r\n        var(--spacing-lg)\r\n      );\r\n    }\r\n  }\r\n\r\n  &.text {\r\n    --button-background-color: transparent;\r\n    --button-border-color: transparent;\r\n    --button-text-color: rgba(var(--primary-rgb), 0.8);\r\n  }\r\n\r\n  .icon + .label {\r\n    border-left: 1px solid var(--button-border-color);\r\n  }\r\n}\r\n",
                     "styleUrl": "./comms-button.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<button [class]=\"[size]\" [class.primary]=\"primary\">\r\n  <span *ngIf=\"icon\" class=\"icon material-icons\">{{ icon }}</span>\r\n  <span *ngIf=\"label\" class=\"label\">{{ label }}</span>\r\n</button>\r\n"
+            "templateData": "<button\r\n  [class]=\"size ? size : DEFAULT_SIZE\"\r\n  [class.primary]=\"primary\"\r\n  [class.text]=\"!!text\"\r\n>\r\n  <span *ngIf=\"icon\" class=\"icon material-icons\">{{ icon }}</span>\r\n  <span *ngIf=\"label\" class=\"label\">{{ label }}</span>\r\n</button>\r\n"
         },
         {
             "name": "CommsInputComponent",
-            "id": "component-CommsInputComponent-fb6c7437fe5e74c83c6b1b88a8e2f7112b9828572a7a493aaa4af35c7380d3cb996fa33815d0e2033b83c23955e09419a4ed2177884093c718619c62467b3278",
+            "id": "component-CommsInputComponent-3b6c1479c784c69de21dc05f9de09f049eb859ddf20b48c2c65f9baae022d50eb15e5a685b8694db4a3f6cdcd1b2abf83d9c28294e307ac866b30811d142c8a5",
             "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -109,10 +232,18 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 },
@@ -120,7 +251,7 @@
                     "name": "placeholder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -129,8 +260,241 @@
                     "defaultValue": "CommsInputTypeEnum.TEXT",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 21,
                     "type": "CommsInputTypeEnum",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "change",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  EventEmitter,\r\n  Input,\r\n  Output,\r\n} from '@angular/core';\r\n\r\nexport enum CommsInputTypeEnum {\r\n  TEXT = 'text',\r\n  NUMBER = 'number',\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-input',\r\n  templateUrl: './comms-input.component.html',\r\n  styleUrls: ['./comms-input.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class CommsInputComponent {\r\n  @Input() type = CommsInputTypeEnum.TEXT;\r\n  @Input() placeholder?: string;\r\n  @Input() label?: string;\r\n  @Input() value?: string;\r\n  @Input() icon?: string;\r\n\r\n  @Output() change = new EventEmitter<Event>();\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../styles/index.scss';\r\n\r\n:host {\r\n  --input-background-color: var(--secondary);\r\n  --input-text-color: var(--bold-text);\r\n  --input-label-color: var(--secondary-text);\r\n  --input-border-color: rgba(var(--secondary-text-rgb), 0.8);\r\n\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n}\r\n\r\nlabel {\r\n  color: var(--input-label-color);\r\n  font-size: 14px;\r\n}\r\n\r\ninput {\r\n  @include padding(var(--spacing-md), 0, var(--spacing-md), 0);\r\n\r\n  width: 100%;\r\n\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  background: var(--input-background-color);\r\n  outline: none;\r\n  border: none;\r\n  border-bottom: 1px solid var(--input-border-color);\r\n  color: var(--input-text-color);\r\n  font-weight: 700;\r\n\r\n  &:focus {\r\n    border-bottom: 1px solid var(--primary);\r\n  }\r\n\r\n  &::placeholder {\r\n    color: var(--input-label-color);\r\n    font-weight: 700;\r\n  }\r\n\r\n  &.icon {\r\n    padding-right: var(--spacing-xl);\r\n  }\r\n}\r\n\r\nspan.icon {\r\n  position: absolute;\r\n  bottom: var(--spacing-md);\r\n  right: 0;\r\n  color: var(--input-label-color);\r\n}\r\n",
+                    "styleUrl": "./comms-input.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<label *ngIf=\"label\">{{ label }}</label>\r\n<input\r\n  [type]=\"type\"\r\n  [placeholder]=\"placeholder ? placeholder : ''\"\r\n  [value]=\"value ? value : ''\"\r\n  [class.icon]=\"icon\"\r\n  (change)=\"change.emit($event)\"\r\n/>\r\n<span *ngIf=\"icon\" class=\"icon material-icons\">{{ icon }}</span>\r\n"
+        },
+        {
+            "name": "CommsNavigationComponent",
+            "id": "component-CommsNavigationComponent-9ef3f973695f55d8a4bd1be7619bd6e778581ac1c4031dd9e7bbd8c48dab9fb8da7738732974ba5305ef849089b5cd2d0fe50adffb448ba986487efbebaf7204",
+            "file": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "comms-navigation",
+            "styleUrls": [
+                "./comms-navigation.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./comms-navigation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "menuItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "CommsNavigationMenuItem[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\nexport interface CommsNavigationMenuItem {\r\n  label: string;\r\n  icon: string;\r\n  link: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-navigation',\r\n  templateUrl: './comms-navigation.component.html',\r\n  styleUrls: ['./comms-navigation.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class CommsNavigationComponent {\r\n  @Input() menuItems: CommsNavigationMenuItem[] = [];\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../styles/index.scss';\r\n\r\n:host {\r\n  --badge-text-color: var(--secondary-text);\r\n  --badge-background-color: var(--secondary-background);\r\n  --badge-border-color: var(--secondary-border-alternate);\r\n}\r\n",
+                    "styleUrl": "./comms-navigation.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"bottom-navigation\">\r\n  <comms-button icon=\"home\"></comms-button>\r\n</div>\r\n"
+        },
+        {
+            "name": "CommsRadioComponent",
+            "id": "component-CommsRadioComponent-3ab20ef011fefe0e96c1acc346e6ee40259ef7267330f2665ae917a3dca4a85cae3c57de7ab87d861003ee0bf8c3454d1b3e27ff5183c8aedaf220eda97140c3",
+            "file": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "comms-radio",
+            "styleUrls": [
+                "./comms-radio.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./comms-radio.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "change",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "localValue",
+                    "defaultValue": "this.value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'click', ['$event']"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "click",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  EventEmitter,\r\n  HostListener,\r\n  Input,\r\n  Output,\r\n} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'comms-radio',\r\n  templateUrl: './comms-radio.component.html',\r\n  styleUrls: ['./comms-radio.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class CommsRadioComponent {\r\n  @Input() label?: string;\r\n  @Input() value?: boolean = false;\r\n\r\n  @Output() change = new EventEmitter<Event>();\r\n\r\n  localValue = this.value;\r\n\r\n  @HostListener('click', ['$event'])\r\n  onClick() {\r\n    this.localValue = !this.localValue;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../styles/index.scss';\r\n\r\n:host {\r\n  --radio-background-color: var(--secondary-background);\r\n  --radio-label-color: var(--bold-text);\r\n  --radio-selected-color: var(--primary);\r\n  --radio-border-color: var(--secondary-border-alternate);\r\n\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  width: 100%;\r\n\r\n  &:hover {\r\n    cursor: pointer;\r\n  }\r\n}\r\n\r\n.radio {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 20px;\r\n  height: 20px;\r\n  background-color: var(--radio-background-color);\r\n  border-radius: 50%;\r\n  margin-right: var(--spacing-sm);\r\n\r\n  border: 1px solid var(--radio-border-color);\r\n\r\n  &.selected {\r\n    --radio-background-color: var(--white);\r\n    --radio-border-color: var(--primary);\r\n    border-width: var(--spacing-sm);\r\n  }\r\n}\r\n\r\nlabel {\r\n  color: var(--radio-label-color);\r\n  font-weight: 700;\r\n\r\n  &:hover {\r\n    cursor: pointer;\r\n  }\r\n}\r\n\r\ninput {\r\n  display: none;\r\n}\r\n",
+                    "styleUrl": "./comms-radio.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<span class=\"radio\" [class.selected]=\"localValue\">\r\n  <!-- <span class=\"selected-indicator\"></span> -->\r\n</span>\r\n<label *ngIf=\"label\">{{ label }}</label>\r\n<input\r\n  [value]=\"localValue\"\r\n  type=\"radio\"\r\n  id=\"css\"\r\n  name=\"fav_language\"\r\n  value=\"CSS\"\r\n  (change)=\"change.emit($event)\"\r\n/>\r\n"
+        },
+        {
+            "name": "CommsSearchComponent",
+            "id": "component-CommsSearchComponent-3dfbcdc13feac47221e9399e758a6f26205b7bbe96e4d45c29229a1ce8d01606668067bdb9e33f11d40cb97f8a14ce98560583ef29e348ff7ba06ecdeb05600a",
+            "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "comms-search",
+            "styleUrls": [
+                "./comms-search.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./comms-search.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -148,7 +512,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "EventEmitter"
                 }
             ],
@@ -161,28 +525,72 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\nexport enum CommsInputTypeEnum {\r\n  TEXT = 'text',\r\n  NUMBER = 'number',\r\n}\r\n\r\n@Component({\r\n  selector: 'comms-input',\r\n  templateUrl: './comms-input.component.html',\r\n  styleUrls: ['./comms-input.component.scss'],\r\n})\r\nexport class CommsInputComponent {\r\n  @Input() type = CommsInputTypeEnum.TEXT;\r\n  @Input() placeholder?: string;\r\n  @Input() label?: string;\r\n  @Input() value?: string;\r\n\r\n  @Output() change = new EventEmitter<Event>();\r\n}\r\n",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  EventEmitter,\r\n  Input,\r\n  Output,\r\n} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'comms-search',\r\n  templateUrl: './comms-search.component.html',\r\n  styleUrls: ['./comms-search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class CommsSearchComponent {\r\n  @Input() placeholder?: string;\r\n  @Input() value?: string;\r\n  @Input() icon?: string;\r\n\r\n  @Output() change = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../styles/global.scss';\r\n\r\n:host {\r\n  --input-background-color: var(--secondary);\r\n  --input-text-color: var(--secondary-text);\r\n  --input-border-color: rgba(var(--secondary-text-rgb), 0.8);\r\n\r\n  position: relative;\r\n}\r\n\r\nlabel {\r\n}\r\n\r\ninput {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  background: var(--input-background-color);\r\n  outline: none;\r\n  border: none;\r\n  border-bottom: 1px solid var(--input-border-color);\r\n  color: var(--input-text-color);\r\n  padding: 0;\r\n\r\n  &:focus {\r\n    border-bottom: 1px solid rgba(var(--secondary-text-rgb), 1);\r\n  }\r\n}\r\n",
-                    "styleUrl": "./comms-input.component.scss"
+                    "data": "@import '../../styles/index.scss';\r\n\r\n:host {\r\n  --search-background-color: var(--secondary-background);\r\n  --search-text-color: var(--bold-text);\r\n  --search-label-color: var(--secondary-text);\r\n  --search-border-color: var(--secondary-border-alternate);\r\n\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n}\r\n\r\ninput {\r\n  @include padding(var(--spacing-md), 0, var(--spacing-md), 0);\r\n\r\n  width: 100%;\r\n\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  background: var(--search-background-color);\r\n  outline: none;\r\n  border: none;\r\n  border-radius: 10px;\r\n  color: var(--search-text-color);\r\n  font-weight: 700;\r\n  padding: var(--spacing-md);\r\n  border: 1px solid var(--search-border-color);\r\n\r\n  &::placeholder {\r\n    color: var(--search-label-color);\r\n    font-weight: 700;\r\n  }\r\n\r\n  &.icon {\r\n    padding-right: 40px;\r\n  }\r\n}\r\n\r\nspan.icon {\r\n  position: absolute;\r\n  bottom: 11px;\r\n  right: 10px;\r\n  color: var(--primary);\r\n}\r\n",
+                    "styleUrl": "./comms-search.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<label *ngIf=\"label\">{{ label }}</label>\r\n<input\r\n  [type]=\"type\"\r\n  [placeholder]=\"placeholder ? placeholder : ''\"\r\n  [value]=\"value ? value : ''\"\r\n  (change)=\"change.emit($event)\"\r\n/>\r\n"
+            "templateData": "<input\r\n  [placeholder]=\"placeholder ? placeholder : ''\"\r\n  [value]=\"value ? value : ''\"\r\n  [class.icon]=\"icon\"\r\n  (change)=\"change.emit($event)\"\r\n/>\r\n<span *ngIf=\"icon\" class=\"icon material-icons\">{{ icon }}</span>\r\n"
         }
     ],
     "modules": [
         {
-            "name": "CommsDesignSystemModule",
-            "id": "module-CommsDesignSystemModule-0e8f975dee37534bb07c2720712d366cb1d28d0d40506db055a6312cc2b4e94245ef099d38ee081f857ebe37cb95bb4a18a7c92d15ecb102ddbac0ca6a26fdbf",
+            "name": "CommsBadgeModule",
+            "id": "module-CommsBadgeModule-f585ad824c11e8c92a001dc6b7ad7a738665ad42319d0b32fefe5280a3ec23f29d0273dc09b0d34c959e1166435f310ce585a7687b47a896329e841ecba6d5e7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/comms-design-system/src/lib/comms-design-system.module.ts",
+            "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { components } from './components';\r\n\r\n@NgModule({\r\n  declarations: [...components],\r\n  imports: [],\r\n  exports: [...components],\r\n})\r\nexport class CommsDesignSystemModule {}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { CommsBadgeComponent } from './comms-badge.component';\r\n\r\n@NgModule({\r\n  declarations: [CommsBadgeComponent],\r\n  imports: [CommonModule],\r\n  exports: [CommsBadgeComponent],\r\n})\r\nexport class CommsBadgeModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CommsBadgeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CommsBadgeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CommsButtonModule",
+            "id": "module-CommsButtonModule-b4af80a48134cc55ccf28c3f560603c30ad85fccaf1f1a1e2fe87731f3c6e0cbede89e5cb5a152284c980ff34a7ae530dfd671ebf3205e835ddafde839873c15",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { CommsButtonComponent } from './comms-button.component';\r\n\r\n@NgModule({\r\n  declarations: [CommsButtonComponent],\r\n  imports: [CommonModule],\r\n  exports: [CommsButtonComponent],\r\n})\r\nexport class CommsButtonModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -193,9 +601,6 @@
                     "elements": [
                         {
                             "name": "CommsButtonComponent"
-                        },
-                        {
-                            "name": "CommsInputComponent"
                         }
                     ]
                 },
@@ -208,9 +613,100 @@
                     "elements": [
                         {
                             "name": "CommsButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CommsDesignSystemModule",
+            "id": "module-CommsDesignSystemModule-383d09449412395e8aca3af4f2c4422041fc710112d7e7c1d17fe5a7ec222e852c5056bd73524ea4d564fff506951a151f044a8ed7c8a2976c14ab4e8bcac27a",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/comms-design-system/src/lib/comms-design-system.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { componentModules } from './components';\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  imports: [CommonModule, ...componentModules],\r\n  exports: [],\r\n})\r\nexport class CommsDesignSystemModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "CommsBadgeModule"
                         },
                         {
-                            "name": "CommsInputComponent"
+                            "name": "CommsButtonModule"
+                        },
+                        {
+                            "name": "CommsNavigationModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CommsNavigationModule",
+            "id": "module-CommsNavigationModule-a7072139e90ff354e997f37a7fefb0d33a77beca168459b7f5730733072e135db7d21e10c93d17c26bcd80a30d840523d751d390452413065eccb16a7d619701",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { CommsButtonModule } from '../comms-button/comms-button.module';\r\nimport { CommsNavigationComponent } from './comms-navigation.component';\r\n\r\n@NgModule({\r\n  declarations: [CommsNavigationComponent],\r\n  imports: [CommonModule, CommsButtonModule],\r\n  exports: [CommsNavigationComponent],\r\n})\r\nexport class CommsNavigationModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CommsNavigationComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "CommsButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CommsNavigationComponent"
                         }
                     ]
                 },
@@ -238,14 +734,44 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "components",
+                "name": "componentModules",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/comms-design-system/src/lib/components/index.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[CommsButtonComponent, CommsInputComponent]"
+                "defaultValue": "[\r\n  CommsBadgeModule,\r\n  CommsButtonModule,\r\n  CommsNavigationModule,\r\n]"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Error",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Icon",
@@ -258,10 +784,40 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Label",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Label",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -298,6 +854,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Placeholder",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -318,6 +894,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Selected",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -326,6 +912,26 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Success",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CommsBadgeComponent>",
+                "defaultValue": "(args: CommsBadgeComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -348,6 +954,46 @@
                 "defaultValue": "(args: CommsInputComponent) => ({\r\n  props: args,\r\n})"
             },
             {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CommsNavigationComponent>",
+                "defaultValue": "(\r\n  args: CommsNavigationComponent\r\n) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CommsRadioComponent>",
+                "defaultValue": "(args: CommsRadioComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CommsSearchComponent>",
+                "defaultValue": "(args: CommsSearchComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Text",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -366,11 +1012,72 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Value",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Warning",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [
+            {
+                "name": "CommsBadgeTypeEnum",
+                "childs": [
+                    {
+                        "name": "DEFAULT",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "default"
+                    },
+                    {
+                        "name": "PRIMARY",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "primary"
+                    },
+                    {
+                        "name": "SUCCESS",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "success"
+                    },
+                    {
+                        "name": "WARNING",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "warning"
+                    },
+                    {
+                        "name": "ERROR",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "error"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.component.ts"
+            },
             {
                 "name": "CommsButtonSizeEnum",
                 "childs": [
@@ -379,6 +1086,12 @@
                         "deprecated": false,
                         "deprecationMessage": "",
                         "value": "small"
+                    },
+                    {
+                        "name": "MEDIUM",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "medium"
                     },
                     {
                         "name": "LARGE",
@@ -505,21 +1218,125 @@
                     "deprecationMessage": "",
                     "type": "Story<CommsButtonComponent>",
                     "defaultValue": "(args: CommsButtonComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "projects/comms-design-system/src/lib/components/index.ts": [
                 {
-                    "name": "components",
+                    "name": "componentModules",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/comms-design-system/src/lib/components/index.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[CommsButtonComponent, CommsInputComponent]"
+                    "defaultValue": "[\r\n  CommsBadgeModule,\r\n  CommsButtonModule,\r\n  CommsNavigationModule,\r\n]"
+                }
+            ],
+            "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CommsBadgeComponent>",
+                    "defaultValue": "(args: CommsBadgeComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "Warning",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CommsNavigationComponent>",
+                    "defaultValue": "(\r\n  args: CommsNavigationComponent\r\n) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts": [
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
                 {
                     "name": "Label",
                     "ctype": "miscellaneous",
@@ -570,10 +1387,127 @@
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 }
+            ],
+            "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts": [
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Placeholder",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CommsSearchComponent>",
+                    "defaultValue": "(args: CommsSearchComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "Value",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts": [
+                {
+                    "name": "Label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Selected",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CommsRadioComponent>",
+                    "defaultValue": "(args: CommsRadioComponent) => ({\r\n  props: args,\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {
+            "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.component.ts": [
+                {
+                    "name": "CommsBadgeTypeEnum",
+                    "childs": [
+                        {
+                            "name": "DEFAULT",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "default"
+                        },
+                        {
+                            "name": "PRIMARY",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "primary"
+                        },
+                        {
+                            "name": "SUCCESS",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "success"
+                        },
+                        {
+                            "name": "WARNING",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "warning"
+                        },
+                        {
+                            "name": "ERROR",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "error"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.component.ts"
+                }
+            ],
             "projects/comms-design-system/src/lib/components/comms-button/comms-button.component.ts": [
                 {
                     "name": "CommsButtonSizeEnum",
@@ -583,6 +1517,12 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "value": "small"
+                        },
+                        {
+                            "name": "MEDIUM",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "medium"
                         },
                         {
                             "name": "LARGE",
@@ -639,12 +1579,81 @@
         "status": "low",
         "files": [
             {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommsBadgeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Error",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Success",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-badge/comms-badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Warning",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/comms-design-system/src/lib/components/comms-button/comms-button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CommsButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -728,12 +1737,32 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-button/comms-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/comms-design-system/src/lib/components/comms-input/comms-input.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CommsInputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-input/comms-input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -787,11 +1816,137 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommsNavigationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CommsNavigationMenuItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-navigation/comms-navigation.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommsRadioComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Label",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Selected",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-radio/comms-radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-search/comms-search.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommsSearchComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Placeholder",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/comms-design-system/src/lib/components/comms-search/comms-search.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Value",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/comms-design-system/src/lib/components/index.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "components",
+                "name": "componentModules",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

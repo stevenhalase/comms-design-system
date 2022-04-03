@@ -1,4 +1,4 @@
-@import '../../styles/global.scss';
+@import '../../styles/index.scss';
 
 :host {
   --input-background-color: var(--secondary);
@@ -7,6 +7,9 @@
   --input-border-color: rgba(var(--secondary-text-rgb), 0.8);
 
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 label {
@@ -31,6 +34,22 @@ input {
   font-weight: 700;
 
   &:focus {
-    border-bottom: 1px solid rgba(var(--secondary-text-rgb), 1);
+    border-bottom: 1px solid var(--primary);
   }
+
+  &::placeholder {
+    color: var(--input-label-color);
+    font-weight: 700;
+  }
+
+  &.icon {
+    padding-right: var(--spacing-xl);
+  }
+}
+
+span.icon {
+  position: absolute;
+  bottom: var(--spacing-md);
+  right: 0;
+  color: var(--input-label-color);
 }

@@ -1,6 +1,9 @@
 $ameixa: #6b58cb;
 $spandex-green: #39b24d;
 $mandarin-rind: #f2933f;
+$carmine-pink: #e74c3c;
+
+$paper-white: #f0f0f2;
 $bay-fog: #9697ad;
 $lead: #202022;
 
@@ -18,6 +21,9 @@ $black: #000000;
   --spandex-green-rgb: #{hexToRGB($spandex-green)};
   --mandarin-rind: #{$mandarin-rind};
   --mandarin-rind-rgb: #{hexToRGB($mandarin-rind)};
+
+  --paper-white: #{$paper-white};
+  --paper-white-rgb: #{hexToRGB($paper-white)};
   --bay-fog: #{$bay-fog};
   --bay-fog-rgb: #{hexToRGB($bay-fog)};
   --lead: #{$lead};
@@ -41,4 +47,35 @@ $black: #000000;
 
   --bold-text: #{$lead};
   --bold-text-rgb: #{hexToRGB($lead)};
+
+  --secondary-background: #{$paper-white};
+  --secondary-background-rgb: #{hexToRGB($paper-white)};
+  --secondary-border-alternate: #{$paper-white};
+  --secondary-border-alternate-rgb: #{hexToRGB($paper-white)};
+
+  --success: #{$spandex-green};
+  --success-rgb: #{hexToRGB($spandex-green)};
+  --warning: #{$mandarin-rind};
+  --warning-rgb: #{hexToRGB($mandarin-rind)};
+  --error: #{$carmine-pink};
+  --error-rgb: #{hexToRGB($carmine-pink)};
+}
+
+.dark-theme {
+  :host {
+    --secondary: #{$lead};
+    --secondary-rgb: #{hexToRGB($lead)};
+    --secondary-text: #{$bay-fog};
+    --secondary-text-rgb: #{hexToRGB($bay-fog)};
+    --secondary-border: #{$bay-fog};
+    --secondary-border-rgb: #{hexToRGB($bay-fog)};
+
+    --bold-text: #{$white};
+    --bold-text-rgb: #{hexToRGB($white)};
+
+    --secondary-background: #{$lead};
+    --secondary-background-rgb: #{hexToRGB($lead)};
+    --secondary-border-alternate: #{$bay-fog};
+    --secondary-border-alternate-rgb: #{hexToRGB($bay-fog)};
+  }
 }

@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run cpx:fonts",
+    "cpx:fonts": "cpx \"./projects/comms-design-system/src/lib/assets/**/*\" \"./dist/comms-design-system/assets\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
@@ -42,6 +43,7 @@
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "babel-loader": "^8.2.4",
+    "cpx": "^1.5.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

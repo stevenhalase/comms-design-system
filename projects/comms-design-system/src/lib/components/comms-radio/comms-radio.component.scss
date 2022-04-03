@@ -1,0 +1,49 @@
+@import '../../styles/index.scss';
+
+:host {
+  --radio-background-color: var(--secondary-background);
+  --radio-label-color: var(--bold-text);
+  --radio-selected-color: var(--primary);
+  --radio-border-color: var(--secondary-border-alternate);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: var(--radio-background-color);
+  border-radius: 50%;
+  margin-right: var(--spacing-sm);
+
+  border: 1px solid var(--radio-border-color);
+
+  &.selected {
+    --radio-background-color: var(--white);
+    --radio-border-color: var(--primary);
+    border-width: var(--spacing-sm);
+  }
+}
+
+label {
+  color: var(--radio-label-color);
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input {
+  display: none;
+}

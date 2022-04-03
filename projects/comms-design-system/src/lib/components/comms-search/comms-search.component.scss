@@ -1,0 +1,48 @@
+@import '../../styles/index.scss';
+
+:host {
+  --search-background-color: var(--secondary-background);
+  --search-text-color: var(--bold-text);
+  --search-label-color: var(--secondary-text);
+  --search-border-color: var(--secondary-border-alternate);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  @include padding(var(--spacing-md), 0, var(--spacing-md), 0);
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--search-background-color);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: var(--search-text-color);
+  font-weight: 700;
+  padding: var(--spacing-md);
+  border: 1px solid var(--search-border-color);
+
+  &::placeholder {
+    color: var(--search-label-color);
+    font-weight: 700;
+  }
+
+  &.icon {
+    padding-right: 40px;
+  }
+}
+
+span.icon {
+  position: absolute;
+  bottom: 11px;
+  right: 10px;
+  color: var(--primary);
+}

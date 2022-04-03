@@ -1,0 +1,46 @@
+@import '../../styles/index.scss';
+
+:host {
+  --badge-text-color: var(--secondary-text);
+  --badge-background-color: var(--secondary-background);
+  --badge-border-color: var(--secondary-border-alternate);
+}
+
+.badge {
+  @include padding(2px, 12px, 2px, 12px);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  color: var(--badge-text-color);
+  background-color: var(--badge-background-color);
+  width: fit-content;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 1px solid var(--badge-border-color);
+
+  &.primary {
+    --badge-text-color: var(--white);
+    --badge-background-color: var(--primary);
+    border: none;
+  }
+
+  &.success {
+    --badge-text-color: var(--white);
+    --badge-background-color: var(--success);
+    border: none;
+  }
+
+  &.warning {
+    --badge-text-color: var(--white);
+    --badge-background-color: var(--warning);
+    border: none;
+  }
+
+  &.error {
+    --badge-text-color: var(--white);
+    --badge-background-color: var(--error);
+    border: none;
+  }
+}

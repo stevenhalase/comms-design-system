@@ -6,21 +6,14 @@ import {
   Output,
 } from '@angular/core';
 
-export enum CommsInputTypeEnum {
-  TEXT = 'text',
-  NUMBER = 'number',
-}
-
 @Component({
-  selector: 'comms-input',
-  templateUrl: './comms-input.component.html',
-  styleUrls: ['./comms-input.component.scss'],
+  selector: 'comms-search',
+  templateUrl: './comms-search.component.html',
+  styleUrls: ['./comms-search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CommsInputComponent {
-  @Input() type = CommsInputTypeEnum.TEXT;
+export class CommsSearchComponent {
   @Input() placeholder?: string;
-  @Input() label?: string;
   @Input() value?: string;
   @Input() icon?: string;
 
