@@ -4,6 +4,6 @@
   [placeholder]="placeholder ? placeholder : ''"
   [value]="value ? value : ''"
   [class.icon]="icon"
-  (change)="change.emit($event)"
+  (change)="change($event)"
 />
 <span *ngIf="icon" class="icon material-icons">{{ icon }}</span>

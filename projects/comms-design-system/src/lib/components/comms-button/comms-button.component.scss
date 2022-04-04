@@ -23,6 +23,7 @@ button {
   color: var(--button-text-color);
   padding: 0;
   width: fit-content;
+  white-space: nowrap;
 
   .label {
     flex: 1;

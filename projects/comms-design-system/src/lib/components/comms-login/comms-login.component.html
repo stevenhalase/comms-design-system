@@ -1,0 +1,31 @@
+<form class="login-container" [formGroup]="loginForm">
+  <comms-logo logoUrl="https://i.ibb.co/WzFR0RP/comms-logo.png"></comms-logo>
+  <comms-input
+    formControlName="email"
+    label="Email"
+    aria-placeholder="Enter email address"
+    icon="email"
+  ></comms-input>
+  <comms-input
+    formControlName="password"
+    label="Password"
+    aria-placeholder="Enter email address"
+    [type]="CommsInputTypeEnum.PASSWORD"
+    icon="lock"
+  ></comms-input>
+  <div class="login-options">
+    <comms-radio label="Remember me"></comms-radio>
+    <comms-button [text]="true" label="Forgot password"></comms-button>
+  </div>
+  <comms-button
+    class="sign-in"
+    [primary]="true"
+    [size]="CommsButtonSizeEnum.BLOCK"
+    label="Sign in"
+  ></comms-button>
+  <comms-button
+    class="sign-up"
+    [size]="CommsButtonSizeEnum.BLOCK"
+    label="Sign up"
+  ></comms-button>
+</form>

@@ -1,6 +1,6 @@
 {
   "name": "comms-design-system",
-  "version": "0.0.0",
+  "version": "0.0.02",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

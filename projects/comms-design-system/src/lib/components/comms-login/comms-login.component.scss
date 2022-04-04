@@ -1,0 +1,47 @@
+@import '../../styles/index.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  @include padding(
+    var(--spacing-md),
+    var(--spacing-md),
+    var(--spacing-md),
+    var(--spacing-md)
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-options {
+  @include margin(var(--spacing-md), 0, var(--spacing-md), 0);
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+comms-logo {
+  margin-bottom: 50px;
+}
+
+comms-input {
+  @include margin(var(--spacing-md), 0, var(--spacing-md), 0);
+}
+
+.sign-in,
+.sign-up {
+  @include margin(var(--spacing-sm), 0, var(--spacing-sm), 0);
+  width: 100%;
+}

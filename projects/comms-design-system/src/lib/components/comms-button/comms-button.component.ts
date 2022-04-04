@@ -23,12 +23,12 @@ export enum CommsButtonSizeEnum {
 export class CommsButtonComponent {
   @Input() label?: string;
   @Input() icon?: string;
-  @Input() primary?: boolean;
-  @Input() menu?: boolean;
-  @Input() active?: boolean;
+  @Input() primary? = false;
+  @Input() menu? = false;
+  @Input() active? = false;
   @Input() size? = CommsButtonSizeEnum.MEDIUM;
-  @Input() text?: boolean;
-  @Input() border?: boolean = true;
+  @Input() text? = false;
+  @Input() border? = true;
 
   @Output() click = new EventEmitter<Event>();
 }

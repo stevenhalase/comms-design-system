@@ -1,10 +1,16 @@
-// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { CommsInputComponent } from './comms-input.component';
 
 export default {
   title: 'Comms / Input',
   component: CommsInputComponent,
+  decorators: [
+    moduleMetadata({
+      imports: [CommonModule, ReactiveFormsModule],
+    }),
+  ],
   argTypes: {},
 } as Meta;
 
