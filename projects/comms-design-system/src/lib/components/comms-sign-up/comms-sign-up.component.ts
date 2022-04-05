@@ -11,20 +11,20 @@ import { CommsButtonSizeEnum } from '../comms-button/comms-button.component';
 import { CommsInputTypeEnum } from '../comms-input/comms-input.component';
 
 @Component({
-  selector: 'comms-login',
-  templateUrl: './comms-login.component.html',
-  styleUrls: ['./comms-login.component.scss'],
+  selector: 'comms-sign-up',
+  templateUrl: './comms-sign-up.component.html',
+  styleUrls: ['./comms-sign-up.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CommsLoginComponent implements OnInit {
+export class CommsSignUpComponent implements OnInit {
   CommsInputTypeEnum = CommsInputTypeEnum;
   CommsButtonSizeEnum = CommsButtonSizeEnum;
 
   @Output() change = new EventEmitter<any>();
-  @Output() signIn = new EventEmitter<any>();
-  @Output() signUp = new EventEmitter<void>();
+  @Output() signUp = new EventEmitter<any>();
+  @Output() signIn = new EventEmitter<void>();
 
-  loginForm = new FormGroup({
+  signUpForm = new FormGroup({
     username: new FormControl('', [
       Validators.required,
       Validators.minLength(1),
@@ -36,15 +36,12 @@ export class CommsLoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.loginForm.valueChanges.subscribe((form) => {
-      console.log('login form change:::', form);
-      this.change.emit(form);
-    });
+    this.signUpForm.valueChanges.subscribe((form) => this.change.emit(form));
   }
 
-  handleSignIn() {
-    this.loginForm.valueChanges
+  handleSignUp() {
+    this.signUpForm.valueChanges
       .pipe(take(1))
-      .subscribe((form) => this.signIn.emit(form));
+      .subscribe((form) => this.signUp.emit(form));
   }
 }

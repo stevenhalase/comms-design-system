@@ -1,0 +1,47 @@
+@import '../../styles/index.scss';
+
+:host {
+  --message-background-color: var(--primary);
+  --message-color: var(--primary-text);
+  --message-border-radius: 15px 15px 0 15px;
+
+  display: flex;
+  width: 100%;
+}
+
+.message {
+  @include margin(var(--spacing-sm), 0, var(--spacing-sm), 0);
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  width: 100%;
+
+  &.incoming {
+    flex-direction: row;
+
+    .text {
+      --message-background-color: var(--message-secondary-background);
+      --message-color: var(--secondary-text);
+
+      --message-border-radius: 15px 15px 15px 0;
+    }
+  }
+}
+
+.text {
+  @include padding(
+    var(--spacing-sm),
+    var(--spacing-md),
+    var(--spacing-sm),
+    var(--spacing-md)
+  );
+
+  @include margin(0, var(--spacing-sm), 0, var(--spacing-sm));
+
+  color: var(--message-color);
+  background-color: var(--message-background-color);
+  height: fit-content;
+
+  border-radius: var(--message-border-radius);
+}

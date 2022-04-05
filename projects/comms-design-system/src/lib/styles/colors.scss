@@ -3,6 +3,7 @@ $spandex-green: #39b24d;
 $mandarin-rind: #f2933f;
 $carmine-pink: #e74c3c;
 
+$white-solid: #f3f3fb;
 $paper-white: #f0f0f2;
 $bay-fog: #9697ad;
 $verified-black: #212526;
@@ -62,6 +63,9 @@ $black: #000000;
   --navigation-text-active: #{$black};
   --navigation-text-active-rgb: #{hexToRGB($black)};
 
+  --message-secondary-background: #{$white-solid};
+  --message-secondary-background-rgb: #{hexToRGB($white-solid)};
+
   --success: #{$spandex-green};
   --success-rgb: #{hexToRGB($spandex-green)};
   --warning: #{$mandarin-rind};
@@ -90,5 +94,8 @@ $black: #000000;
     --navigation-background-rgb: #{hexToRGB($verified-black)};
     --navigation-text-active: #{$white};
     --navigation-text-active-rgb: #{hexToRGB($white)};
+
+    --message-secondary-background: #{$verified-black};
+    --message-secondary-background-rgb: #{hexToRGB($verified-black)};
   }
 }

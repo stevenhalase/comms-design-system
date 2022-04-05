@@ -25,8 +25,21 @@ Primary.args = {
   label: 'Share',
 };
 
+export const DisabledPrimary = Template.bind({});
+DisabledPrimary.args = {
+  primary: true,
+  disabled: true,
+  label: 'Share',
+};
+
 export const Secondary = Template.bind({});
 Secondary.args = {
+  label: 'Cancel',
+};
+
+export const DisabledSecondary = Template.bind({});
+DisabledSecondary.args = {
+  disabled: true,
   label: 'Cancel',
 };
 

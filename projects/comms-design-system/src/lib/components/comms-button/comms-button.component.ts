@@ -23,6 +23,7 @@ export enum CommsButtonSizeEnum {
 export class CommsButtonComponent {
   @Input() label?: string;
   @Input() icon?: string;
+  @Input() disabled? = false;
   @Input() primary? = false;
   @Input() menu? = false;
   @Input() active? = false;

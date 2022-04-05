@@ -35,9 +35,13 @@ export const decorators = [
     const isLight = theme === 'light';
     const decorated = {
       ...story,
-      template: `<div class="${theme}-theme" style="padding:15px;${
+      template: `
+        <div class="${theme}-theme" style="padding:15px;${
         isLight ? '' : 'background-color:#202022;'
-      }">${story.template}</div>`,
+      }">
+          ${story.template}
+        </div>
+      `,
     };
     //debugger;
     return decorated;
